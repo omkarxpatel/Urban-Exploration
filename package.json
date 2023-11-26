@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.5",
+    "firebase": "^10.6.0",
+    "pg": "^8.11.3",
+    "pool": "^0.4.1",
+    "supabase": "^1.113.3",
+    "type":"module"
+  },
+  "scripts": {
+    "start": "live-server"
+  }
+}
