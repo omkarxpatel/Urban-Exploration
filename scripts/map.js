@@ -1,5 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map("map").setView([0, 0], 2);
+// map.js
+
+function initMap() {
+    document.getElementById("Map").style.display = "block";
+
+    var map = L.map("map").setView([0, 0], 2); 
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
@@ -7,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         navigator.geolocation.getCurrentPosition(
             function (position) {
                 var userLocation = [position.coords.latitude, position.coords.longitude];
-                map.setView(userLocation, 10); 
 
+                map.setView(userLocation, 10); 
                 L.marker(userLocation).addTo(map)
                     .bindPopup("Your Location").openPopup();
             },
@@ -30,4 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var marker = L.marker(location.coordinates).addTo(map)
             .bindPopup(location.name);
     });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('nav ul li:nth-child(2) a').addEventListener('click', initMap);
 });

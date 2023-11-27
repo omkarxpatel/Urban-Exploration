@@ -162,11 +162,26 @@ button:hover{
 	transform: scale(.6);
 }
 
+.error-button {
+    background-color: #cc0000;
+    pointer-events: none;
+}
+
 /*login page end*/
 
-/* map page start*/
+/* map page start */
+#map-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 #map {
     height: 500px;
     width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
 }
-/*map page end*/
+/* map page end */
+

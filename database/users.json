@@ -1,0 +1,15 @@
+[
+    {
+        "__Comment__": "FAKE DATA - used for testing"
+    },
+    {
+        "username": "user1",
+        "password": "password1",
+        "uuid": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+    },
+    {
+        "username": "user2",
+        "password": "password2",
+        "uuid": "asd8f7da-fk32-98da-8b1d-kajsd5hfasdh"
+    }
+]
