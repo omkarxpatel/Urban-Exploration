@@ -141,7 +141,7 @@ export function logout() {
         signOut(auth);
         clearLocalStorage("uuid");
         console.log("User is signed out");
-        pageTitle.textContent = "Welcome to Urban Explorer";
+        document.getElementById("homePageTitle").textContent = "Welcome to Urban Explorer";
         registerButton.innerHTML = '<a href="#" onclick="return showPage(\'Registration\');">Registration</a>';
 
         document.getElementById('signupEmail').textContent = ""

@@ -1,5 +1,5 @@
 // map.js
-
+// 37°30'58.9"N 122°16'47.6"W
 function initMap() {
     document.getElementById("Map").style.display = "block";
 
