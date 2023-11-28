@@ -236,6 +236,7 @@ onAuthStateChanged(auth, (user) => {
         if (user.displayName) {
             pageTitle.textContent += (", " + user.displayName);
         }
+        saveToLocalStorage("user", JSON.stringify(user));
 
         registerButton.innerHTML = '<a href="#" id="logoutButtonUl">Logout</a>'
         document.getElementById('logoutButtonUl').addEventListener('click', logout);
