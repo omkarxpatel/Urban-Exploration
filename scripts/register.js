@@ -1,3 +1,4 @@
+// https://github.com/firebase/firebaseui-web
 import {
     getAuth,
     onAuthStateChanged,
@@ -8,6 +9,7 @@ import {
     signInWithEmailLink,
     sendSignInLinkToEmail,
     updateProfile,
+    // sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
 
 import { 
@@ -19,6 +21,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { loading } from "./helper/load.js"
 
 export const firebaseConfig = {
     apiKey: "AIzaSyApjyyEsck64qPg3OmyV5pmwgHYB_9Rs9E",
@@ -47,7 +50,9 @@ const actionCodeSettings = {
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth();
-const db = getFirestore(app);
+// const db = getFirestore(app);
+
+
 
 export async function signup(event) {
     event.preventDefault();
@@ -70,7 +75,7 @@ export async function signup(event) {
             );
         saveToLocalStorage("uuid", uuid);
         document.getElementById("homePageTitle").textContent += (", " + user.displayName);
-        await sendEmailVerification(email)
+        // await sendEmailVerification(email) https://firebase.google.com/docs/auth/web/manage-users#send_a_user_a_verification_email
         
 
     } catch (error) {
@@ -131,6 +136,7 @@ export async function login(event) {
 
         console.log(user.uid, "is now logged in with credentials");
         saveToLocalStorage("uuid", user.uid);
+
     } catch (error) {
         handleAuthError(error, "login", email, password);
     }
@@ -240,7 +246,9 @@ onAuthStateChanged(auth, (user) => {
 
         registerButton.innerHTML = '<a href="#" id="logoutButtonUl">Logout</a>'
         document.getElementById('logoutButtonUl').addEventListener('click', logout);
-        showPage('Home')
+        showPage('Home');
+        loading(1);
+
 
     } else {
         console.log("User is signed out");
@@ -298,4 +306,3 @@ onAuthStateChanged(auth, (user) => {
 
 document.getElementById('signupForm').addEventListener('submit', signup);
 document.getElementById('loginForm').addEventListener('submit', login);
-document.getElementById('logout').addEventListener('click', logout);

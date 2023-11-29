@@ -24,11 +24,11 @@
                 <h1 id="pageTitle">Urban Explorer</h1>
                 <nav>
                     <ul>
-                        <li><a href="#" onclick="return showPage('Home');">Home</a></li>
-                        <li><a href="#" onclick="return showPage('Map');" id="mapLink">Map</a></li>
+                        <li><a href="#" onclick="return showPage('Home');" id="homeButton">Home</a></li>
+                        <li><a href="#" onclick="return showPage('Map');" id="mapButton">Map</a></li>
                         <li><a href="#" onclick="return showPage('Registration');" id="registerButton" class="registerButton">Registration</a></li>
-                        <li><a href="#" onclick="return showPage('Page4');">Page 4</a></li>
-                        <li><a href="#" onclick="return showPage('Dashboard');">Dashboard</a></li>
+                        <!-- <li><a href="#" onclick="return showPage('Page4');" id="page4Button">Page 4</a></li> -->
+                        <!-- <li><a href="#" onclick="return showPage('Dashboard');"id="dashboardButton">Dashboard</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -37,33 +37,35 @@
         <div class="loader-wrapper" style="opacity: 0; display:none">
             <span class="loader"><span class="loader-inner"></span></span>
         </div>
+<div id="Home" class="page">
+    <h2 class="brief" id="homePageTitle">Welcome to Urban Explorer</h2>
+    <p class="brief">Embark on a captivating journey through the labyrinth of city streets, where the echoes of the past resonate in the hidden corners waiting to be discovered.</p>
 
-        <div id="Home" class="page">
-            <h2 class="brief" id="homePageTitle">Welcome to Urban Explorer</h2>
-            <p class="brief">Voluptate labore quis deserunt id fugiat id.</p>
-
-            <div class="features">
-                <div class="feature">
-                    <h3>Voluptate labore quis deserunt id fugiat id.</h3>
-                    <p>In ut excepteur quis do dolore reprehenderit sunt voluptate nostrud exercitation nulla quis. Elit culpa pariatur laborum voluptate est ut excepteur enim cupidatat reprehenderit ea nisi adipisicing ea. Esse voluptate adipisicing consequat eu qui id sunt nostrud elit. Anim excepteur adipisicing cillum velit mollit est tempor velit amet consectetur.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>Voluptate labore quis deserunt id fugiat id.</h3>
-                    <p>In ut excepteur quis do dolore reprehenderit sunt voluptate nostrud exercitation nulla quis. Elit culpa pariatur laborum voluptate est ut excepteur enim cupidatat reprehenderit ea nisi adipisicing ea. Esse voluptate adipisicing consequat eu qui id sunt nostrud elit. Anim excepteur adipisicing cillum velit mollit est tempor velit amet consectetur.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>Voluptate labore quis deserunt id fugiat id.</h3>
-                    <p>In ut excepteur quis do dolore reprehenderit sunt voluptate nostrud exercitation nulla quis. Elit culpa pariatur laborum voluptate est ut excepteur enim cupidatat reprehenderit ea nisi adipisicing ea. Esse voluptate adipisicing consequat eu qui id sunt nostrud elit. Anim excepteur adipisicing cillum velit mollit est tempor velit amet consectetur.</p>
-                </div>
-
-                <div class="feature">
-                    <h3>Voluptate labore quis deserunt id fugiat id.</h3>
-                    <p>In ut excepteur quis do dolore reprehenderit sunt voluptate nostrud exercitation nulla quis. Elit culpa pariatur laborum voluptate est ut excepteur enim cupidatat reprehenderit ea nisi adipisicing ea. Esse voluptate adipisicing consequat eu qui id sunt nostrud elit. Anim excepteur adipisicing cillum velit mollit est tempor velit amet consectetur.</p>
-                </div>
-            </div>
+    <div class="features">
+        <div class="feature">
+            <h3>Discover the Forgotten Wonders</h3>
+            <p>Urban exploration unveils the beauty of forgotten places. Venture into abandoned factories, deserted warehouses, and decaying buildings to witness the silent narratives of a bygone era. Every crack in the wall and rusted staircase tells a story of a place frozen in time.</p>
         </div>
+
+        <div class="feature">
+            <h3>Tips for the Urban Adventurer</h3>
+            <p>As you embark on your urban exploration journey, equip yourself with essentials. A sturdy backpack is your ally, carrying water, snacks, and a first aid kit. Comfortable footwear ensures you can navigate various terrains, and a reliable flashlight illuminates the mysteries of dark spaces.</p>
+            <!-- <p>Respect the places you explore; leave no trace behind. Ensure your safety by researching locations, understanding their history, and being cautious of unstable structures. Urban exploration is an art that thrives on responsible adventure.</p> -->
+        </div>
+
+        <div class="feature">
+            <h3>Capture the Essence with Your Camera</h3>
+            <p>Bring along your camera to immortalize the unique aesthetic of urban exploration. The juxtaposition of nature reclaiming its space amidst urban decay creates a visual poetry. From the play of light on forgotten artifacts to the vibrant colors of street art, every photo becomes a testament to the resilience of the urban landscape.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Connect with the Urban Exploration Community</h3>
+            <p>Joining local urban exploration groups opens doors to a community that shares your passion. Swap stories, exchange tips, and collaborate on exciting expeditions. Connect with like-minded individuals who appreciate the thrill of uncovering the hidden gems within the cityscape.</p>
+        </div>
+    </div>
+</div>
+
+
 
 
         <div id="Map" class="page" style="display:none">
@@ -116,12 +118,17 @@
             <main id="dashboardContent">
                 <div class="user-info">
                     <div class="profile-picture">
-                        <img id="profilePicture" src="placeholder_profile_picture.jpg" alt="Profile Picture">
+                        <img id="profilePicture" src="images/defaultProfilePicture.jpeg" alt="Profile Picture">
+                        <input type="file" id="profilePictureInput" accept="image/*">
                     </div>
                     <div class="user-details">
-                        <h4 id="temp"></h4>
-                        <h3 id="displayName"></h3>
-                        <p id="email"></p>
+                        <h3 id="displayName">Display Name: </h3>
+                        <p id="userType">User Type: </p>
+                        <p id="email">Email: </p>
+                        <p id="emailVerified">Email Verified: </p>
+                        <br>
+                        <p id="joinDate">Join Date: </p>
+                        <p id="lastSeen">Last Seen: </p>
                     </div>
                 </div>
             </main>
@@ -134,10 +141,12 @@
     <script src="scripts/register.js" type="module"></script>
     <script src="scripts/map.js" type="module"></script>
     <script src="scripts/dashboard.js" type="module"></script>
+    <script src="scripts/helper/load.js" type="module"></script>
 
     <!-- helper -->
     <script src="scripts/helper/showPage.js"></script>
     <script src="scripts/helper/showPassword.js"></script>
+    <!-- <script>showPage('Home');</script> -->
 
     </body>
 </html>
